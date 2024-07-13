@@ -1,0 +1,169 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  /* primary-colors */
+  --violet: hsl(263, 55%, 52%);
+  --grayishBlue: hsl(217, 19%, 35%);
+  --blackishBlue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  /* neutral colors */
+  --lightGrey: hsl(0, 0%, 81%);
+  --grayish-blue: hsl(210, 46%, 95%);
+
+  /* font-weights */
+  --fw-regular: 500;
+  --fw-semi-bold: 600;
+}
+
+body {
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: var(--fw-regular);
+  background-color: var(--grayish-blue);
+}
+
+.container {
+  gap: 1.5rem;
+  display: grid;
+  padding: 1.3rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .daniel {
+    grid-column: 1 / span 2;
+  }
+
+  .patrick {
+    grid-column: 2 / span 2;
+  }
+
+  .jeanette {
+    grid-row: 2;
+  }
+
+  .kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+}
+
+.testimonial-card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: var(--white);
+  padding: 2.45rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.testimonial-image {
+  border-radius: 50%;
+  border: 5px solid rgb(117, 65, 200, 75%);
+}
+
+.testimonial-info {
+  gap: 1rem;
+  display: flex;
+  div {
+    display: flex;
+    gap: 0.2rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.daniel {
+  background-color: var(--violet);
+}
+
+.jonathan {
+  background-color: var(--grayishBlue);
+}
+
+.jeanette {
+  background-color: var(--white);
+  color: black;
+}
+
+.patrick {
+  background-color: var(--blackishBlue);
+}
+
+.kira {
+  background-color: var(--white);
+  color: black;
+}
+
+.testimonial-header {
+  font-weight: var(--fw-semi-bold);
+}
+
+.testimonial-title {
+  opacity: 50%;
+}
+
+.testimonial-content {
+  opacity: 75%;
+  font-family: sans-serif;
+  line-height: 1.8;
+}
